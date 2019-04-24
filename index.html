@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My First AJAX Call</title>
+<link rel="stylesheet" type="text/css" href="ajax.css">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+<body>
+  <div>
+    <div id="image-parent">
+      <img src="cat.jpg">
+    </div>
+    <button id="request">See what this cat is thinking</button>
+    <div id="thoughts"></div>
+</div>
+  <script>
+  const btn = document.getElementById('request');
+  const thoughts = document.getElementById('thoughts');
+
+  const request = new XMLHttpRequest();
+
+  request.onreadystatechange = function() {
+    if(request.readyState === 4) {
+      if(request.status === 200) {
+        thoughts.innerHTML = request.responseText;
+      } else {
+        thoughts.innerHTML = 'An error occurred during your request: ' +  request.status + ' ' + request.statusText;
+      }
+    }
+  }
+
+  request.open('Get', 'thoughts.txt');
+
+  btn.addEventListener('click', function() {
+    this.style.display = 'none';
+    request.send();
+  });
+
+  </script>
+</body>
+</html>

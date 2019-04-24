@@ -1,0 +1,59 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+body {
+  font-size: 20px;
+  background: linear-gradient(20deg, rgba(33, 183, 223, 0.75), rgba(148, 81, 1, 0.8));
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#image-parent {
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 5vw;
+}
+
+img {
+  width: 100%;
+  max-width: 800px;
+  transition: all .4s;
+}
+
+img:hover {
+  transform: scale(1.08);
+}
+
+button {
+  font-size: 25px;
+  width: 40%;
+  border-radius: 40px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: rgb(98, 51, 2);
+  border: 2px solid white;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  transition-property: all;
+  transition-duration: .4s;
+}
+button:hover {
+  background-color: rgba(98, 51, 2, 0.82);
+  transform: scaleX(1.1);
+}
+
+#thoughts {
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  width: 50%;
+  font-size: 30px;
+  text-align: center;
+}
